@@ -10,10 +10,12 @@ const ingredients = [
 const ingredientsList = document.querySelector("#ingredients");
 console.log(ingredientsList);
 
-ingredients.map((elem) => {
+const ingrediendItems = ingredients.map((elem) => {
   const ingredientItem = document.createElement("li");
   ingredientItem.textContent = elem;
-  ingredientsList.append(ingredientItem);
+  return ingredientItem;
   // console.log(ingredientItem);
   // console.log(elem);
 });
+// однією дією
+ingredientsList.append(...ingrediendItems);

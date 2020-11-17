@@ -19,12 +19,10 @@ const images = [
 const listGallery = document.getElementById("gallery");
 console.log(listGallery);
 
-images.map((elem) => {
-  const imageListCreat = `<li><img src="${elem.url}" alt="${elem.alt}" width="320" height="180"></li>`;
-  listGallery.insertAdjacentHTML("beforeend", imageListCreat);
-});
+listGallery.style.display = "flex";
+listGallery.style.justifyContent = "space-evenly";
 
-// images.map((elem) => {
-//   const imageListCreat = document.createElement("li");
-//   listGallery.insertAdjacentHTML("afterbegin", imageListCreat);
-// });
+const imageListCreat = images.map((elem) => {
+  return `<li><img src="${elem.url}" alt="${elem.alt}" width="320" height="180"></li>`;
+});
+listGallery.insertAdjacentHTML("beforeend", imageListCreat.join(""));

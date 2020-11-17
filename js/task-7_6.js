@@ -4,9 +4,7 @@ const inputValid = +validInputRef.dataset.length;
 // console.log(inputValid);
 
 validInputRef.addEventListener("input", (event) => {
-  if (event.target.value === " ") {
-    validInputRef.value = "";
-  }
+  validInputRef.value = event.target.value.split(" ").join("");
 });
 validInputRef.addEventListener("blur", (event) => {
   validInputRef.classList.add("invalid");

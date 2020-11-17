@@ -3,9 +3,8 @@ const spanRef = document.getElementById("name-output");
 console.dir(inputRef);
 console.dir(spanRef);
 inputRef.addEventListener("input", (event) => {
-  if (event.target.value === " ") {
-    inputRef.value = "";
-  }
+  inputRef.value = event.target.value.split(" ").join("");
+
   spanRef.textContent =
     event.target.value === "" ? "незнайомець" : event.target.value;
 });
